@@ -1,0 +1,310 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>our cars || carket - the market for cars</title>
+        <link rel="stylesheet" href="faqstyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <link href="font-awesome-pro-5\font-awesome-pro-5\css\all.css" rel="stylesheet">
+        <script defer src="font-awesome-pro-5\font-awesome-pro-5\js\pro.js"></script>
+        
+    </head>
+    <body>
+        <!---promotional header--->
+        <div class="promo">
+            <h3 style="font-size: 14px;">order now and get one year warranty free! use code PITSTOP <i class="fas fa-wrench"></i></h3>
+        </div>
+
+        <!---sticky header--->
+        <div class="sticky-header" id="sticky-header" style="background-color: black;">
+            <nav>
+                <a href="index.html" style="font-size: 52px; color: white; font-weight: bold; text-decoration: none; padding-left: 20px;">carket</a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa-solid fa-x" onclick="hideMenu()"></i>
+                        <ul>
+                            <li><a href="cars.html">our cars</a></li>
+                            <li><a href="services.html">our services</a></li>
+                            <li><a href="appointments.html">book an appointment</a></li>
+                            <li><a href="faq.html">faq</a></li>
+                            <li><a href="about.html">about us</a></li>
+                            <li><a href="contacts.html">contact us</a></li>
+                        </ul>
+                        <div class="sticky-links">
+                            <li><a href="" style="padding-right: 5px;"><i class="far fa-search" style="color: white;"></i></a></li>
+                            <li><a href="" style="padding-right: 5px;"><i class="fas fa-heart" style="color: white;"></i></a></li>
+                            <li><a href="" style="padding-right: 5px;"></a><i class="far fa-shopping-bag" style="color: white;"></i></li>
+                            <li><a href="" style="padding-right: 5px;"></a><i class="fas fa-user" style="color: white;"></i></li>
+                        </div>
+                    </div>
+                <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+            </nav>
+            <!---sticky scroll javascript--->
+            <script>
+                window.onscroll = function() {stickyFunction()};
+        
+                var header = document.getElementById("sticky-header");
+                var sticky = header.offsetTop;
+        
+                function stickyFunction() {
+                    if (window.pageYOffset > sticky) {
+                        header.classList.add("sticky");
+                    } else {
+                        header.classList.remove("sticky");
+                    }
+                }
+            </script>
+        </div>
+
+        <!---changing promotional header--->
+        <div class="changing-promo" style="background-color: rgb(255, 255, 255); padding: 10px 0 10px;">
+            <div class="promo-banner">
+                <div class="promotion-slideshow">
+                    <div class="promotion-fade" style="font-size: 14px;">
+                        <p><i class="fas fa-graduation-cap" style="font-size: 18px;"></i> students get $100 off their first purchase. select cars only. exclusions apply. || <a href="" style="color: black;">save now</a></p>
+                    </div>
+                    <div class="promotion-fade" style="font-size: 14px; ">
+                        <p><i class="fas fa-box-heart" style="font-size: 18px;"></i> worry less with carket+. try out our all-inclusive inspection & servicing package today. || <a href="" style="color: black;">learn more</a></p>
+                    </div>
+                    <div class="promotion-fade" style="font-size: 14px;">
+                        <p><i class="fas fa-island-tropical" style="font-size: 18px;"></i> our summer sale has landed! looking for your next summer getaway ride? we've got you covered. || <a href="" style="color: black;">shop now</a></p>
+                    </div>
+                </div>
+                <!---promo slideshow javascript--->
+                <script>
+                let promoIndex = 0;
+                displayPromos();
+                function displayPromos() {
+                    let i;
+                    const promotion = document.getElementsByClassName("promotion-fade");
+                    for (i = 0; i < promotion.length; i++) {
+                        promotion[i].style.display = "none";
+                    }
+                    promoIndex++;
+                    if (promoIndex > promotion.length) {
+                        promoIndex = 1;
+                    }
+                    promotion[promoIndex-1].style.display = "block";
+                    setTimeout(displayPromos, 2000); 
+                    }
+                </script>
+            </div>
+        </div>
+
+        <!---contacts link header--->
+        <div class="contacts-link">
+            <h3 style="font-size: 14px;"><i class="fas fa-info-circle"></i> can't find your answer? <a href="contacts.html" style="color: white;">contact us</a> for support.</h3>
+        </div>
+
+        <!---directory path--->
+        <div class="path" style="padding-left: 30px; padding-top: 20px;">
+            <span style="font-size: 10px; color: gray;"><p><a href="index.html" style="color: black; text-decoration: none;">home</a><b style="color: black;"> ||</b> faq</p></span>
+        </div>
+
+        <!---frequently asked questions--->
+        <div class="container">
+            <h1>frequently asked questions</h1>
+            <h3 style="font-size: 14px; font-style: italic; font-weight: 300; padding-left: 80px;">have any questions? we're here to help!</h3>
+
+            <div class="products-container">
+
+               <div class="product" data-name="p-1">
+                <h2>how do i know my car is insured?</h2>
+               </div>
+    
+               <div class="product" data-name="p-2">
+                <h2>how do i unsubscribe from emails?</h2>
+               </div>
+         
+               <div class="product" data-name="p-3">
+                <h2>what if there's something wrong with my new car?</h2>
+               </div>
+         
+               <div class="product" data-name="p-4">
+                <h2>can i test drive a car?</h2>
+               </div>
+         
+               <div class="product" data-name="p-5">
+                <h2>how do refunds/returns work?</h2>
+               </div>
+         
+               <div class="product" data-name="p-6">
+                <h2>what are carket's career opportunities?</h2>
+               </div>
+         
+            </div>
+            <a href="contacts.html" class="faq-btn" style="margin-top: 2%; font-size: 18px; margin-left: 38%;">need more info? contact us!</a>
+         </div>
+         
+         <div class="products-preview">
+
+            <div class="preview" data-target="p-1">
+                <i class="fas fa-times"></i>
+                <i class="fas fa-shield-alt" style="font-size: 36px;"></i>
+                <h3>every purchase of a vehicle goes through a quality control check known as carket+. your car will undergo a very detailed inspection service, given the necessary touch ups and a carket+ stamp of approval upon collection/delivery.</h3>
+                <br>
+                <h3 style="font-size: 14px;">to find out more about carket+, click <a href="" style="color: rgb(0, 0, 0);">here</a>.</h3>
+            </div>
+         
+            <div class="preview" data-target="p-2">
+                <i class="fas fa-times"></i>
+                <i class="fas fa-envelope-open-text" style="font-size: 36px;"></i>
+                <h3>you can unsubscribe from all carket emails through the unsubscribe link at the bottom of every email.</h3>
+                <br>
+                <h3>alternatively, if you have a carket account, please visit the subscriptions page to update your marketing preferences. </h3>
+                <br>
+                <h3 style="font-size: 14px;">you can view your marketing preferences by clicking <a href="" style="color: rgb(0, 0, 0);">here</a>.</h3>
+            </div>
+         
+            <div class="preview" data-target="p-3">
+               <i class="fas fa-times"></i>
+               <i class="fas fa-wrench" style="font-size: 36px;"></i>
+               <h3>immediately contact carket and, if possible, send your car to a carket branch nearest to you. we'll further guide you through the next steps. if your car needs to be repaired, a temporary car will be given for you to use in the meantime.</h3>
+               <br>
+               <h3 style="font-size: 14px;">for further information regarding replacements and breakdowns, please <a href="contacts.html" style="color: rgb(0, 0, 0);">contact us</a> via email, phone or through our online chat feature.</h3>
+            </div>
+         
+            <div class="preview" data-target="p-4">
+               <i class="fas fa-times"></i>
+               <i class="fad fa-steering-wheel" style="font-size: 36px;"></i>
+               <h3>of course! please make sure to book an appointment through our website as we are usually fully booked and are unable to prioritise any walk-ins. </h3>
+               <br>
+               <h3 style="font-size: 14px;">feel free to <a href="contacts.html" style="color: rgb(0, 0, 0);">contact us</a> or use our online chat service for further details.</h3>
+            </div>
+         
+            <div class="preview" data-target="p-5">
+               <i class="fas fa-times"></i>
+               <i class="fas fa-file-invoice" style="font-size: 36px;"></i>
+               <h3>if you'd like to return your car please call us at 1-202-456-1111 and we'll arrange for the car to be picked up. alternatively, can choose to drop it off at any of our customer centres.
+               <br>
+               <h3>once we receive your car, we'll check to make sure the car meets all the return conditions so that we can begin the refunding process.</h3>
+               <br>
+               <h3>any refunds must be paid through to the same payment method, and to the same account that was originally used to purchase the car. any damages identified will be taken into account when calculating the refund value.</h3>
+               <br>
+               <h3>if your car was delivered, your $200 delivery fee will be refunded. if you collected your car, a $99 admin fee will be refunded as collections are free. </h3>
+               <h3 style="font-size: 14px;">to find out more about carket+, click <a href="" style="color: rgb(0, 0, 0);">here</a>.</h3>
+            </div>
+         
+            <div class="preview" data-target="p-6">
+               <i class="fas fa-times"></i>
+               <i class="fas fa-suitcase" style="font-size: 36px;"></i>
+               <h3>we're always on the lookout for talent! if you're interested in joining carket, please contact us via careers@carket.com to know more about our current openings.</h3>
+               <br>
+               <h3 style="font-size: 14px;">you can also find out more by visting our <a href="" style="color: rgb(0, 0, 0);">careers page</a>.</h3>
+            </div>
+            <script>
+                let previewContainer = document.querySelector('.products-preview');
+                let previewBox = previewContainer.querySelectorAll('.preview');
+
+                document.querySelectorAll('.products-container .product').forEach(product =>{
+                product.onclick = () =>{
+                    previewContainer.style.display = 'flex';
+                    let name = product.getAttribute('data-name');
+                    previewBox.forEach(preview =>{
+                    let target = preview.getAttribute('data-target');
+                    if(name == target){
+                        preview.classList.add('active');
+                    }
+                    });
+                };
+                });
+
+                previewBox.forEach(close =>{
+                close.querySelector('.fa-times').onclick = () =>{
+                    close.classList.remove('active');
+                    previewContainer.style.display = 'none';
+                };
+                });
+            </script>
+        </div>
+
+
+        <!---footer--->
+        <section class="footer">
+            <div class="newsletter">
+                <h2>want to know more? subscribe to our newsletter <i class="fas fa-paper-plane"></i></h2>
+                <p>get all the latest model drops, limited-time offers, and collaboration events sent right into your inbox asap.</p>
+                <br>
+                <br>
+                <form action="subscribe">
+                    <input type="email" id="email" name="email" placeholder="e-mail" style="background-color: black; color: white; border: 2px solid white; padding: 12px 16px; font-size: 20px;">
+                    <input type="submit" value="sign me up ->" style="background-color: black; color: white; border: 2px solid white; padding: 12px 34px; font-size: 20px;">
+                </form>
+                <br>
+                <br>
+                <p style="font-size: 10px;">by subscribing to carket, you consent to receiving marketing messages via email. rates may apply. click <a href="" style="color: white; font-size: 10px;">unsubscribe</a> to opt out at any time.</p>
+            </div>
+            <div class="foot-row">
+                <div class="foot-col">
+                    <h3>contact us</h3>
+                    <p><i class="fal fa-envelope"></i> customerservice@carket.com</p>
+                    <p><i class="fal fa-phone"></i> 1-202-456-1111</p>
+                    <p><i class="fal fa-clock"></i> operating hours are from 9am to 6pm ET Monday to Saturday</p>
+                    <br>
+                    <h3>about us</h3>
+                    <p>A leading establishment in digital automotive dealership, Carket is the marketplace for all things cars. Carket is the trusted choice for cars through; professional service, guaranteed security, and high-quality cars. Carket has throughout the years helped thousands of customers purchase the perfect car tailored to their liking. Carket is proud to be a revolutionising figure in the car retailing sector, where anybody can travel from point A to point B. </p>
+                </div>
+                <div class="foot-col">
+                    <h3>follow carket </h3>
+                    <div class="social-media">
+                        <li><a href="" style="font-size: 24px; color: white; text-decoration: none; list-style-type: none;"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="" style="font-size: 24px; color: white; text-decoration: none;"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="" style="font-size: 24px; color: white; text-decoration: none;"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="" style="font-size: 24px; color: white; text-decoration: none;"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="" style="font-size: 24px; color: white; text-decoration: none;"><i class="fab fa-tiktok"></i></i></a></li>
+                    </div>
+                    <div class="ulinks-row">
+                        <div class="ulinks-column">
+                            <h3>help</h3>
+                            <li><a href="faq.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">faq</a></li>
+                            <li><a href="contacts.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">contact us</a></li>
+                            <li><a href="account.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">my account</a></li>
+                        </div>
+                        <div class="ulinks-column">
+                            <h3>cars</h3>
+                            <li><a href="collaborations.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">collaborations</a></li>
+                            <li><a href="cars.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">shop cars</a></li>
+                            <li><a href="about.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">about carket</a></li>
+                            <li><a href="careers.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">careers</a></li>
+                        </div>
+                        <div class="ulinks-column">
+                            <h3>legal</h3>
+                            <li><a href="returns.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">returns</a></li>
+                            <li><a href="returns.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">policy</a></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rights">
+                <div class="rights">
+                    <h3>© 2023 carket holdings. all rights reserved.</h3>
+                </div>
+            </div>
+            <div class="bottom-right">
+                <div class="privacy">
+                    <li><a href="" style="font-size: 14px; color: rgb(255, 255, 255); text-decoration: none;">privacy policy</a></li>
+                </div>
+                <p style="font-size: 14px; color: rgb(255, 255, 255);">&nbsp;|&nbsp;</p>
+                <div class="terms">
+                    <li><a href="" style="font-size: 14px; color: white; text-decoration: none;">terms of use</a></li>
+                </div>
+                <p style="font-size: 14px; color: rgb(255, 255, 255);">&nbsp;|&nbsp;</p>
+                <div class="accessibility">
+                    <li><a href="" style="font-size: 14px; color: white; text-decoration: none;">accessibility</a></li>
+                </div>
+            </div>
+        </section>
+
+        <!---javascript for sidebar menu toggle--->
+        <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }  
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+        </script>
+    </body>
+</html>

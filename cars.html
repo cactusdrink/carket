@@ -1,0 +1,909 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>all cars || carket - the market for cars</title>
+        <link rel="stylesheet" href="carsstyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <link href="font-awesome-pro-5\font-awesome-pro-5\css\all.css" rel="stylesheet">
+        <script defer src="font-awesome-pro-5\font-awesome-pro-5\js\pro.js"></script>
+        <link href="pixar-cufonfonts\Pixar.ttf" rel="stylesheet">
+        
+    </head>
+    <body>
+        <!---promotional header--->
+        <div class="promo">
+            <h3 style="font-size: 14px;">order now and get one year warranty free! use code PITSTOP <i class="fas fa-wrench"></i></h3>
+        </div>
+
+        <!---sticky header--->
+        <div class="sticky-header" id="sticky-header" style="background-color: black;">
+            <nav>
+                <a href="index.html" style="font-size: 52px; color: white; font-weight: bold; text-decoration: none; padding-left: 20px;">carket</a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa-solid fa-x" onclick="hideMenu()"></i>
+                        <ul>
+                            <li><a href="cars.html">our cars</a></li>
+                            <li><a href="services.html">our services</a></li>
+                            <li><a href="appointments.html">book an appointment</a></li>
+                            <li><a href="faq.html">faq</a></li>
+                            <li><a href="about.html">about us</a></li>
+                            <li><a href="contacts.html">contact us</a></li>
+                        </ul>
+                        <div class="sticky-links">
+                            <li><a href="" style="padding-right: 5px;"><i class="far fa-search" style="color: white;"></i></a></li>
+                            <li><a href="" style="padding-right: 5px;"><i class="fas fa-heart" style="color: white;"></i></a></li>
+                            <li><a href="" style="padding-right: 5px;"></a><i class="far fa-shopping-bag" style="color: white;"></i></li>
+                            <li><a href="" style="padding-right: 5px;"></a><i class="fas fa-user" style="color: white;"></i></li>
+                        </div>
+                    </div>
+                <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+            </nav>
+            <!---sticky scroll javascript--->
+            <script>
+                window.onscroll = function() {stickyFunction()};
+        
+                var header = document.getElementById("sticky-header");
+                var sticky = header.offsetTop;
+        
+                function stickyFunction() {
+                    if (window.pageYOffset > sticky) {
+                        header.classList.add("sticky");
+                    } else {
+                        header.classList.remove("sticky");
+                    }
+                }
+            </script>
+        </div>
+
+        <!---changing promotional header--->
+        <div class="changing-promo" style="background-color: rgb(255, 255, 255); padding: 10px 0 10px;">
+            <div class="promo-banner">
+                <div class="promotion-slideshow">
+                    <div class="promotion-fade" style="font-size: 14px;">
+                        <p><i class="fas fa-graduation-cap" style="font-size: 18px;"></i> students get $100 off their first purchase. select cars only. exclusions apply. || <a href="" style="color: black;">save now</a></p>
+                    </div>
+                    <div class="promotion-fade" style="font-size: 14px; ">
+                        <p><i class="fas fa-box-heart" style="font-size: 18px;"></i> worry less with carket+. try out our all-inclusive inspection & servicing package today. || <a href="" style="color: black;">learn more</a></p>
+                    </div>
+                    <div class="promotion-fade" style="font-size: 14px;">
+                        <p><i class="fas fa-island-tropical" style="font-size: 18px;"></i> our summer sale has landed! looking for your next summer getaway ride? we've got you covered. || <a href="" style="color: black;">shop now</a></p>
+                    </div>
+                </div>
+                <!---promo slideshow javascript--->
+                <script>
+                let promoIndex = 0;
+                displayPromos();
+                function displayPromos() {
+                    let i;
+                    const promotion = document.getElementsByClassName("promotion-fade");
+                    for (i = 0; i < promotion.length; i++) {
+                        promotion[i].style.display = "none";
+                    }
+                    promoIndex++;
+                    if (promoIndex > promotion.length) {
+                        promoIndex = 1;
+                    }
+                    promotion[promoIndex-1].style.display = "block";
+                    setTimeout(displayPromos, 2000); 
+                    }
+                </script>
+            </div>
+        </div>
+
+        <!---filter/search tool--->
+
+
+
+
+
+        <!---promo banner--->
+        <section class="promo-banner">
+            <div class="banner" style="height: 350px;">
+                <h1>summer sale <i class="fas fa-island-tropical" style="font-size: 52px;"></i></h1>
+                <h3>get up to $1000 off your new car!*</h3>
+                <p style="color: white; padding-top: 10px; font-weight: bold; font-size: 24px;">ends 9/13</p>
+                <br>
+                <p style="color: white; padding-bottom: 50px;">*terms and conditions apply.</p>
+            </div>
+        </section>
+
+        <!---directory path--->
+        <div class="path" style="padding-left: 30px; padding-top: 20px;">
+            <span style="font-size: 10px; color: gray;"><p><a href="index.html" style="color: black; text-decoration: none;">home</a><b style="color: black;"> ||</b> shop all cars</p></span>
+        </div>
+
+        <!---all cars--->
+        <div class="all-container">
+            <h1>on sale</h1>
+            <h3>check out our amazing, limited-time offers!</h3>
+            <div class="all-row">
+                <div class="all-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart1" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #4ce300;"></i> in stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart1');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="Toyota corolla hatchback.jpg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">toyota corolla</h4>
+                    <div class="tag-budget">
+                        <p><i class="fas fa-coins"></i> budget</p>
+                    </div>
+                    <div class="tag-efficient">
+                        <p><i class="fas fa-chart-line"></i> efficient</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fad fa-star-half"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                    </div>
+                    <p>$22,000</p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="all-btn">book now</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+                <div class="all-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart2" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #4ce300;"></i> in stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart2');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="E-class estate 2.png" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">mercedes e class</h4>
+                    <div class="tag-family">
+                        <p><i class="fas fa-home"></i> family friendly</p>
+                    </div>
+                    <div class="tag-luxury">
+                        <p><i class="fas fa-gem"></i> luxury</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                    </div>
+                    <div class="tags">
+
+                    </div>
+                    <p>$56,000</p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="all-btn">book now</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+                <div class="all-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart3" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #4ce300;"></i> in stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart3');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="Mini.jpg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">mini cooper s</h4>
+                    <div class="tag-budget">
+                        <p><i class="fas fa-coins"></i> budget</p>
+                    </div>
+                    <div class="tag-summer">
+                        <p><i class="fas fa-island-tropical"></i> summer</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fad fa-star-half"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                    </div>
+                    <div class="tags">
+                        
+                    </div>
+                    <p>$26,000</p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="all-btn">book now</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+                <div class="all-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart4" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #4ce300;"></i> in stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart4');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="Volkswagen Touran .jpeg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">volkswagen touran</h4>
+                    <div class="tag-family">
+                        <p><i class="fas fa-home"></i> family friendly</p>
+                    </div>
+                    <div class="tag-efficient">
+                        <p><i class="fas fa-chart-line"></i> efficient</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fad fa-star-half"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                        
+                    </div>
+                    <div class="tags">
+
+                    </div>
+                    <p>$21,000</p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="all-btn">book now</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+                <div class="all-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart5" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #4ce300;"></i> in stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart5');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="Audi A5 Coupe.jpeg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">audi a5 coupe</h4>
+                    <div class="tag-summer">
+                        <p><i class="fas fa-island-tropical"></i> summer</p>
+                    </div>
+                    <div class="tag-sport">
+                        <p><i class="fas fa-pennant"></i> sport</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                    </div>
+                    <div class="tags">
+
+                    </div>
+                    <p>$43,000 <b style="text-decoration: line-through; font-weight: 400;">$44,000</b></p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="all-btn">book now</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+                <div class="all-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart6" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #4ce300;"></i> in stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart6');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="Bmw 2 series coupe .jpeg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">bmw 2 series coupe</h4>
+                    <div class="tag-budget">
+                        <p><i class="fas fa-coins"></i> budget</p>
+                    </div>
+                    <div class="tag-sport">
+                        <p><i class="fas fa-pennant"></i> sport</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fad fa-star-half"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                    </div>
+                    <div class="tags">
+
+                    </div>
+                    <p>$38,000</p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="all-btn">book now</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pixar-container" style="background-image: url(carsotwbg.jpg); background-size: cover;">
+            <h1 style="color: white;">pixar cars feature</h1>
+            <h3 style="color: white;">browse our special collection of pixar cars models - and get a free year of Disney+ with each purchase!</h3>
+            <div class="pixar-row">
+                <div class="pixar-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart1" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #e33500;"></i> out of stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart1');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="corvettec6.png" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">chevrolet corvette c6</h4>
+                    <div class="tag-pixar">
+                        <p><i class="fas fa-film-alt"></i> PIXAR Cars&copy </p>
+                    </div>
+                    <div class="tag-mcqueen">
+                        <p><i class="fas fa-flag-checkered"></i> Lightning Mcqueen</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fad fa-star-half"></i>
+                        <a href="" style="color: black; font-size: 14px;">5 reviews</a>
+                    </div>
+                    <p>$51,545</p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="oos-btn">out of stock</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+                <div class="pixar-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart2" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #e33500;"></i> out of stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart2');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="911sally.jpg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">porsche 911 - sally special</h4>
+                    <div class="tag-pixar">
+                        <p><i class="fas fa-film-alt"></i> PIXAR Cars&copy </p>
+                    </div>
+                    <div class="tag-sally">
+                        <p><i class="fas fa-traffic-cone"></i> Sally Carrera</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <a href="" style="color: black; font-size: 14px;">2 reviews</a>
+                    </div>
+                    <div class="tags">
+
+                    </div>
+                    <p>$3,600,000</p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="oos-btn">out of stock</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+                <div class="pixar-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart3" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #4ce300;"></i> in stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart3');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="materfordf350.jpg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">ford f-350</h4>
+                    <div class="tag-pixar">
+                        <p><i class="fas fa-film-alt"></i> PIXAR Cars&copy </p>
+                    </div>
+                    <div class="tag-mater">
+                        <p><i class="fas fa-truck-pickup"></i> Tow Mater</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fad fa-star-half"></i>
+                        <a href="" style="color: black; font-size: 14px;">5 reviews</a>
+                    </div>
+                    <div class="tags">
+                        
+                    </div>
+                    <p>$43,835</p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="all-btn">book now</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+                <div class="pixar-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart4" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #4ce300;"></i> in stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart4');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="mateofortwo.png" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">smart fortwo</h4>
+                    <div class="tag-pixar">
+                        <p><i class="fas fa-film-alt"></i> PIXAR Cars&copy </p>
+                    </div>
+                    <div class="tag-mateo">
+                        <p><i class="fas fa-rings-wedding"></i> Mateo</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fad fa-star-half"></i>
+                        <a href="" style="color: black; font-size: 14px;">11 reviews</a>
+                        
+                    </div>
+                    <div class="tags">
+
+                    </div>
+                    <p>$14,650</p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="all-btn">book now</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+                <div class="pixar-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart5" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #4ce300;"></i> in stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart5');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="luigi.jpg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">fiat 500</h4>
+                    <div class="tag-pixar">
+                        <p><i class="fas fa-film-alt"></i> PIXAR Cars&copy </p>
+                    </div>
+                    <div class="tag-luigi">
+                        <p><i class="fas fa-tire"></i> Luigi</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <a href="" style="color: black; font-size: 14px;">14 reviews</a>
+                    </div>
+                    <div class="tags">
+
+                    </div>
+                    <p>$13,000</p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="all-btn">book now</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="all-container">
+            <h1>all cars</h1>
+            <h3>view our vast collection of vehicles!</h3>
+            <div class="all-row">
+                <div class="all-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart1" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #4ce300;"></i> in stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart1');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="Toyota corolla hatchback.jpg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">toyota corolla</h4>
+                    <div class="tag-budget">
+                        <p><i class="fas fa-coins"></i> budget</p>
+                    </div>
+                    <div class="tag-efficient">
+                        <p><i class="fas fa-chart-line"></i> efficient</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fad fa-star-half"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                    </div>
+                    <p>$22,000</p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="all-btn">book now</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+                <div class="all-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart2" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #4ce300;"></i> in stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart2');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="E-class estate 2.png" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">mercedes e class</h4>
+                    <div class="tag-family">
+                        <p><i class="fas fa-home"></i> family friendly</p>
+                    </div>
+                    <div class="tag-luxury">
+                        <p><i class="fas fa-gem"></i> luxury</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                    </div>
+                    <div class="tags">
+
+                    </div>
+                    <p>$56,000</p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="all-btn">book now</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+                <div class="all-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart3" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #4ce300;"></i> in stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart3');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="Mini.jpg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">mini cooper s</h4>
+                    <div class="tag-budget">
+                        <p><i class="fas fa-coins"></i> budget</p>
+                    </div>
+                    <div class="tag-summer">
+                        <p><i class="fas fa-island-tropical"></i> summer</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fad fa-star-half"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                    </div>
+                    <div class="tags">
+                        
+                    </div>
+                    <p>$26,000</p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="all-btn">book now</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+                <div class="all-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart4" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #4ce300;"></i> in stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart4');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="Volkswagen Touran .jpeg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">volkswagen touran</h4>
+                    <div class="tag-family">
+                        <p><i class="fas fa-home"></i> family friendly</p>
+                    </div>
+                    <div class="tag-efficient">
+                        <p><i class="fas fa-chart-line"></i> efficient</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fad fa-star-half"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                        
+                    </div>
+                    <div class="tags">
+
+                    </div>
+                    <p>$21,000</p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="all-btn">book now</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+                <div class="all-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart5" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #4ce300;"></i> in stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart5');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="Audi A5 Coupe.jpeg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">audi a5 coupe</h4>
+                    <div class="tag-summer">
+                        <p><i class="fas fa-island-tropical"></i> summer</p>
+                    </div>
+                    <div class="tag-sport">
+                        <p><i class="fas fa-pennant"></i> sport</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                    </div>
+                    <div class="tags">
+
+                    </div>
+                    <p>$44,000</p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="all-btn">book now</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+                <div class="all-column">
+                    <div class="heart">
+                        <i class="fas fa-heart" id="heart6" style="font-size: 32px; float: right;"></i>
+                        <p><i class="fas fa-circle" style="color: #4ce300;"></i> in stock</p>
+                    </div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart6');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="Bmw 2 series coupe .jpeg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4 style="padding-bottom: 5px;">bmw 2 series coupe</h4>
+                    <div class="tag-budget">
+                        <p><i class="fas fa-coins"></i> budget</p>
+                    </div>
+                    <div class="tag-sport">
+                        <p><i class="fas fa-pennant"></i> sport</p>
+                    </div>
+                    <div class="rating" style="padding-top: 5px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fad fa-star-half"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                    </div>
+                    <div class="tags">
+
+                    </div>
+                    <p>$38,000</p>
+                    <br>
+                    <div class="buttons">
+                        <a href="" class="all-btn">book now</a>
+                        <a href="" class="all-btn">learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!---footer--->
+        <section class="footer">
+            <div class="newsletter">
+                <h2>want to know more? subscribe to our newsletter <i class="fas fa-paper-plane"></i></h2>
+                <p>get all the latest model drops, limited-time offers, and collaboration events sent right into your inbox asap.</p>
+                <br>
+                <br>
+                <form action="subscribe">
+                    <input type="email" id="email" name="email" placeholder="e-mail" style="background-color: black; color: white; border: 2px solid white; padding: 12px 16px; font-size: 20px;">
+                    <input type="submit" value="sign me up ->" style="background-color: black; color: white; border: 2px solid white; padding: 12px 34px; font-size: 20px;">
+                </form>
+                <br>
+                <br>
+                <p style="font-size: 10px;">by subscribing to carket, you consent to receiving marketing messages via email. rates may apply. click <a href="" style="color: white; font-size: 10px;">unsubscribe</a> to opt out at any time.</p>
+            </div>
+            <div class="foot-row">
+                <div class="foot-col">
+                    <h3>contact us</h3>
+                    <p><i class="fal fa-envelope"></i> customerservice@carket.com</p>
+                    <p><i class="fal fa-phone"></i> 1-202-456-1111</p>
+                    <p><i class="fal fa-clock"></i> operating hours are from 9am to 6pm ET Monday to Saturday</p>
+                    <br>
+                    <h3>about us</h3>
+                    <p>A leading establishment in digital automotive dealership, Carket is the marketplace for all things cars. Carket is the trusted choice for cars through; professional service, guaranteed security, and high-quality cars. Carket has throughout the years helped thousands of customers purchase the perfect car tailored to their liking. Carket is proud to be a revolutionising figure in the car retailing sector, where anybody can travel from point A to point B. </p>
+                </div>
+                <div class="foot-col">
+                    <h3>follow carket </h3>
+                    <div class="social-media">
+                        <li><a href="" style="font-size: 24px; color: white; text-decoration: none; list-style-type: none;"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="" style="font-size: 24px; color: white; text-decoration: none;"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="" style="font-size: 24px; color: white; text-decoration: none;"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="" style="font-size: 24px; color: white; text-decoration: none;"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="" style="font-size: 24px; color: white; text-decoration: none;"><i class="fab fa-tiktok"></i></i></a></li>
+                    </div>
+                    <div class="ulinks-row">
+                        <div class="ulinks-column">
+                            <h3>help</h3>
+                            <li><a href="faq.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">faq</a></li>
+                            <li><a href="contacts.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">contact us</a></li>
+                            <li><a href="account.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">my account</a></li>
+                        </div>
+                        <div class="ulinks-column">
+                            <h3>cars</h3>
+                            <li><a href="collaborations.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">collaborations</a></li>
+                            <li><a href="cars.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">shop cars</a></li>
+                            <li><a href="about.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">about carket</a></li>
+                            <li><a href="careers.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">careers</a></li>
+                        </div>
+                        <div class="ulinks-column">
+                            <h3>legal</h3>
+                            <li><a href="returns.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">returns</a></li>
+                            <li><a href="returns.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">policy</a></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rights">
+                <div class="rights">
+                    <h3>© 2023 carket holdings. all rights reserved.</h3>
+                </div>
+            </div>
+            <div class="bottom-right">
+                <div class="privacy">
+                    <li><a href="" style="font-size: 14px; color: rgb(255, 255, 255); text-decoration: none;">privacy policy</a></li>
+                </div>
+                <p style="font-size: 14px; color: rgb(255, 255, 255);">&nbsp;|&nbsp;</p>
+                <div class="terms">
+                    <li><a href="" style="font-size: 14px; color: white; text-decoration: none;">terms of use</a></li>
+                </div>
+                <p style="font-size: 14px; color: rgb(255, 255, 255);">&nbsp;|&nbsp;</p>
+                <div class="accessibility">
+                    <li><a href="" style="font-size: 14px; color: white; text-decoration: none;">accessibility</a></li>
+                </div>
+            </div>
+        </section>
+
+        <!---javascript for sidebar menu toggle--->
+        <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }  
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+        </script>
+
+        <!---javascript for slideshow toggle--->
+        <script>
+            
+        </script>
+
+        
+    </body>
+</html>

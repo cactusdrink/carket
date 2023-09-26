@@ -1,0 +1,720 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>home || carket - the market for cars</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <link href="font-awesome-pro-5\font-awesome-pro-5\css\all.css" rel="stylesheet">
+        <script defer src="font-awesome-pro-5\font-awesome-pro-5\js\pro.js"></script>
+        <link href="pixar-cufonfonts\Pixar.ttf" rel="stylesheet">
+        
+    </head>
+    <body onload="openPopup()">
+        <!---promotional header--->
+        <div class="promo">
+            <h3 style="font-size: 14px;">order now and get one year warranty free! use code PITSTOP <i class="fas fa-wrench"></i></h3>
+        </div>
+
+        <!---sticky header--->
+        <div class="sticky-header" id="sticky-header" style="background-color: black;">
+            <nav>
+                <a href="index.html" style="font-size: 52px; color: white; font-weight: bold; text-decoration: none; padding-left: 20px;">carket</a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa-solid fa-x" onclick="hideMenu()"></i>
+                        <ul>
+                            <li><a href="cars.html">our cars</a></li>
+                            <li><a href="services.html">our services</a></li>
+                            <li><a href="appointments.html">book an appointment</a></li>
+                            <li><a href="faq.html">faq</a></li>
+                            <li><a href="about.html">about us</a></li>
+                            <li><a href="contacts.html">contact us</a></li>
+                        </ul>
+                        <div class="sticky-links">
+                            <li><a href="" style="padding-right: 5px;"><i class="far fa-search" style="color: white;"></i></a></li>
+                            <li><a href="" style="padding-right: 5px;"><i class="fas fa-heart" style="color: white;"></i></a></li>
+                            <li><a href="" style="padding-right: 5px;"></a><i class="far fa-shopping-bag" style="color: white;"></i></li>
+                            <li><a href="" style="padding-right: 5px;"></a><i class="fas fa-user" style="color: white;"></i></li>
+                        </div>
+                    </div>
+                <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+            </nav>
+            <!---sticky scroll javascript--->
+            <script>
+                window.onscroll = function() {stickyFunction()};
+        
+                var header = document.getElementById("sticky-header");
+                var sticky = header.offsetTop;
+        
+                function stickyFunction() {
+                    if (window.pageYOffset > sticky) {
+                        header.classList.add("sticky");
+                    } else {
+                        header.classList.remove("sticky");
+                    }
+                }
+            </script>
+        </div>
+
+        <!---changing promotional header--->
+        <div class="changing-promo" style="background-color: rgb(255, 255, 255); padding: 10px 0 10px;">
+            <div class="promo-banner">
+                <div class="promotion-slideshow">
+                    <div class="promotion-fade" style="font-size: 14px;">
+                        <p><i class="fas fa-graduation-cap" style="font-size: 18px;"></i> students get $100 off their first purchase. select cars only. exclusions apply. || <a href="" style="color: black;">save now</a></p>
+                    </div>
+                    <div class="promotion-fade" style="font-size: 14px; ">
+                        <p><i class="fas fa-box-heart" style="font-size: 18px;"></i> worry less with carket+. try out our all-inclusive inspection & servicing package today. || <a href="" style="color: black;">learn more</a></p>
+                    </div>
+                    <div class="promotion-fade" style="font-size: 14px;">
+                        <p><i class="fas fa-island-tropical" style="font-size: 18px;"></i> our summer sale has landed! looking for your next summer getaway ride? we've got you covered. || <a href="" style="color: black;">shop now</a></p>
+                    </div>
+                </div>
+                <!---promo slideshow javascript--->
+                <script>
+                let promoIndex = 0;
+                displayPromos();
+                function displayPromos() {
+                    let i;
+                    const promotion = document.getElementsByClassName("promotion-fade");
+                    for (i = 0; i < promotion.length; i++) {
+                        promotion[i].style.display = "none";
+                    }
+                    promoIndex++;
+                    if (promoIndex > promotion.length) {
+                        promoIndex = 1;
+                    }
+                    promotion[promoIndex-1].style.display = "block";
+                    setTimeout(displayPromos, 2000); 
+                    }
+                </script>
+            </div>
+        </div>
+
+        <!---pop up promo--->
+        <div class="popup-container" style="width: 400px;">
+            <div class="popup" id="popup">
+                <div class="popup-image" style="height: 300px;">
+                    <i class="fas fa-times" onclick="closePopup()" style="font-size: 20px; color: rgb(255, 255, 255); margin-top: 3%; margin-left: 90%;"></i>
+                </div>
+                <div class="popup-info" style="padding-left: 20px; padding-right: 20px; padding-bottom: 30px;">
+                    <span style="font-size: 32px; padding-top: 20px;"><b style="font-family: 'pixarFont'; font-weight: 100;">P I X A R</b> x carket</span>
+                    <br>
+                    <p style="font-weight: 300;">ORDER NOW AND GET 1 WHOLE YEAR OF DISNEY+ FOR FREE*</p>
+                    <p style="font-size: 8px; padding-top: 20px;">*Terms and Conditions apply.</p>
+                    <br>
+                    <div class="popup-btns">
+                        <button class="popup-btn" onclick="closePopup()">shop now</button>
+                        <button class="popup-btn" onclick="closePopup()">no thanks</button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                let popup = document.getElementById("popup");
+
+                function openPopup(){
+                    popup.classList.add("open-popup");
+                }
+                function closePopup(){
+                    popup.classList.remove("open-popup");
+                }
+            </script>
+        </div>
+
+        <!---home page--->
+        <section class="front-page">
+            <div class="text-box">
+                <h1>the no.1 car retailer</h1>
+                <p>with a near-endless assortment of makes, models, and manufacturers, finding the perfect ride has never been so easy!</p>
+                <a href="" class="hero-btn">book an appointment with us today!</a>
+            </div>
+        </section>
+
+
+        <!---featured products--->
+        <div class="slider">
+
+            <!---slides--->
+            <div class="myslide fade">
+                <div class="txt">
+                    <span style="font-size: 50px; font-weight: bold;"><b style="font-family: 'pixarFont'; font-weight: 100;">P I X A R</b> x carket</span>
+                    <p><i class="fal fa-tv" style="font-size: 24px;"></i> get a whole year of Disney+ for free</p>
+                    <br>
+                    <a href="" class="hero-btn">learn more</a>
+                </div>
+                <img src="cotr.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 0px 60%;">
+            </div>
+
+            <div class="myslide fade">
+                <div class="txt">
+                    <h1>evs have landed!</h1>
+                    <p><i class="fal fa-bolt" style="font-size: 24px;"></i> introducing the ioniq 6</p>
+                    <br>
+                    <a href="" class="hero-btn">shop now</a>
+                </div>
+                <img src="ioniq6back.png" style="width: 100%; height: 100%; object-fit: cover; object-position: 0px 70%;">
+            </div>
+            
+            <div class="myslide fade">
+                <div class="txt">
+                    <h1>choice care with carket+</h1>
+                    <p><i class="fal fa-box-heart" style="font-size: 24px;"></i> the all-in-one servicing package</p>
+                    <br>
+                    <a href="" class="hero-btn">learn more</a>
+                </div>
+                <img src="washbw.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            
+            <div class="myslide fade">
+                <div class="txt">
+                    <h1>shop pre-loved cars</h1>
+                    <p><i class="fal fa-coins" style="font-size: 24px;"></i> deals that can't be beat</p>
+                    <br>
+                    <a href="" class="hero-btn">shop now</a>
+                </div>
+                <img src="road.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            
+            <!---slide toggle buttons--->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+            <div class="dotsbox" style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+
+        <!---javascript for slides--->
+        <script>
+            const myslide = document.querySelectorAll('.myslide'),
+                dot = document.querySelectorAll('.dot');
+            let counter = 1;
+            slidefun(counter);
+  
+            let timer = setInterval(autoSlide, 8000);
+            function autoSlide() {
+                counter += 1;
+                slidefun(counter);
+            }
+            function plusSlides(n) {
+                counter += n;
+                slidefun(counter);
+                resetTimer();
+            }
+            function currentSlide(n) {
+                counter = n;
+                slidefun(counter);
+                resetTimer();
+            }
+            function resetTimer() {
+                clearInterval(timer);
+                timer = setInterval(autoSlide, 8000);
+            }
+  
+            function slidefun(n) {
+      
+                let i;
+                for(i = 0;i<myslide.length;i++){
+                    myslide[i].style.display = "none";
+                }
+                for(i = 0;i<dot.length;i++) {
+                    dot[i].className = dot[i].className.replace(' active', '');
+                }
+                if(n > myslide.length){
+                    counter = 1;
+                    }
+                if(n < 1){
+                    counter = myslide.length;
+                    }
+                myslide[counter - 1].style.display = "block";
+                dot[counter - 1].className += " active";
+            }
+        </script>
+
+        <!---our cars--->
+        <section class="our-cars">
+            <h1>our cars</h1>
+            <p>explore our vast catalogue of vehicles!</p>
+            <a href="cars.html" class="allcars-btn">browse all cars -></a>
+
+            <div class="row">
+                <div class="cars-column">
+                    <a href="" class="car-btn">shop sedans</a>
+                    <!--<p>a five-seater vehicle that provides excellent comfort. great for everyday use, the sedan is ideal for those wanting to commute in style.</p>-->
+                </div>
+                <div class="cars-column">
+                    <a href="" class="car-btn">shop coupes</a>
+                    <!--<p></p>-->
+                </div>
+                <div class="cars-column">
+                    <a href="" class="car-btn">shop hatchbacks</a>
+                    <!--<p>a compact four to five-seater vehicle that can navigate through narrow roads. the hatchback is the epitome of hassle-free driving.</p>-->
+                </div>
+                <div class="cars-column">
+                    <a href="" class="car-btn">shop family cars</a>
+                    <!--<p>the perfect vehicle for families, the seven to eight-seater minivan provides ample room that comforts long distance travellers. </p>-->
+                </div>
+                <div class="cars-column">
+                    <a href="" class="car-btn">shop suvs</a>
+                    <!--<p>a five-seater vehicle that gives way to an exciting experience for on the road commuters who seek to explore off-roading adventures.</p>-->
+                </div>
+                <div class="cars-column">
+                    <a href="" class="car-btn">shop pickups</a>
+                    <!--<p>a light-duty vehicle well known for its four-wheel drive and powerful engine. the pickup is a prime example of strength and muscle. </p>-->
+                </div>
+            </div>
+
+        </section>
+
+        <!---promo banner--->
+        <section class="promo-banner">
+            <div class="banner" style="height: 450px;">
+                <h1>new arrivals</h1>
+                <h3>check out the latest models + reviews -></h3>
+                <a href="" class="banner-btn">browse now</a>
+            </div>
+        </section>
+
+        <!---trending models--->
+        <div class="trending-container">
+            <h1>what's trending?</h1>
+            <h3>check out our all time hottest picks!</h3>
+            <div class="trending-row">
+                <div class="trending-column">
+                    <div class="heart"><i class="fas fa-heart" id="heart1" style="font-size: 32px; float: right;"></i></div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart1');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="Toyota corolla hatchback.jpg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4>toyota corolla sedan</h4>
+                    <div class="tag-budget">
+                        <p><i class="fas fa-coins"></i> budget</p>
+                    </div>
+                    <div class="tag-efficient">
+                        <p><i class="fas fa-chart-line"></i> efficient</p>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fad fa-star-half"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                    </div>
+                    <div class="tags">
+                        <p></p>
+                    </div>
+                    <p>$22,000</p>
+                    <br>
+                    <a href="" class="trending-btn">shop now</a>
+                </div>
+                <div class="trending-column">
+                    <div class="heart"><i class="fas fa-heart" id="heart2" style="font-size: 32px; float: right;"></i></div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart2');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="E-class estate 2.png" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4>mercedes e class</h4>
+                    <div class="tag-family">
+                        <p><i class="fas fa-home"></i> family friendly</p>
+                    </div>
+                    <div class="tag-luxury">
+                        <p><i class="fas fa-gem"></i> luxury</p>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                    </div>
+                    <div class="tags">
+
+                    </div>
+                    <p>$56,000</p>
+                    <br>
+                    <a href="" class="trending-btn">shop now</a>
+                </div>
+                <div class="trending-column">
+                    <div class="heart"><i class="fas fa-heart" id="heart3" style="font-size: 32px; float: right;"></i></div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart3');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="Mini.jpg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4>mini cooper s</h4>
+                    <div class="tag-budget">
+                        <p><i class="fas fa-coins"></i> budget</p>
+                    </div>
+                    <div class="tag-summer">
+                        <p><i class="fas fa-island-tropical"></i> summer</p>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fad fa-star-half"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                    </div>
+                    <div class="tags">
+                        
+                    </div>
+                    <p>$26,000</p>
+                    <br>
+                    <a href="" class="trending-btn">shop now</a>
+                </div>
+                <div class="trending-column">
+                    <div class="heart"><i class="fas fa-heart" id="heart4" style="font-size: 32px; float: right;"></i></div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart4');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="Volkswagen Touran .jpeg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4>volkswagen touran</h4>
+                    <div class="tag-family">
+                        <p><i class="fas fa-home"></i> family friendly</p>
+                    </div>
+                    <div class="tag-efficient">
+                        <p><i class="fas fa-chart-line"></i> efficient</p>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fad fa-star-half"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                    </div>
+                    <div class="tags">
+
+                    </div>
+                    <p>$21,000</p>
+                    <br>
+                    <a href="" class="trending-btn">shop now</a>
+                </div>
+                <div class="trending-column">
+                    <div class="heart"><i class="fas fa-heart" id="heart5" style="font-size: 32px; float: right;"></i></div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart5');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="Audi A5 Coupe.jpeg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4>audi a5 coupe</h4>
+                    <div class="tag-summer">
+                        <p><i class="fas fa-island-tropical"></i> summer</p>
+                    </div>
+                    <div class="tag-sport">
+                        <p><i class="fas fa-pennant"></i> sport</p>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                    </div>
+                    <div class="tags">
+
+                    </div>
+                    <p>$44,000</p>
+                    <br>
+                    <a href="" class="trending-btn">shop now</a>
+                </div>
+                <div class="trending-column">
+                    <div class="heart"><i class="fas fa-heart" id="heart6" style="font-size: 32px; float: right;"></i></div>
+                        <!---heart icon color change--->
+                        <script>
+                            (function() {
+                                const heart = document.getElementById('heart6');
+                                    heart.addEventListener('click', function() {
+                                    heart.classList.toggle('black');
+                                });
+                            })();
+                        </script>
+                    <img src="Bmw 2 series coupe .jpeg" style="width: 300px; height: 400px; object-fit: contain;">
+                    <h4>bmw 2 series coupe</h4>
+                    <div class="tag-budget">
+                        <p><i class="fas fa-coins"></i> budget</p>
+                    </div>
+                    <div class="tag-sport">
+                        <p><i class="fas fa-pennant"></i> sport</p>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fad fa-star-half"></i>
+                        <a href="" style="color: black; font-size: 14px;">12 reviews</a>
+                    </div>
+                    <div class="tags">
+
+                    </div>
+                    <p>$38,000</p>
+                    <br>
+                    <a href="" class="trending-btn">shop now</a>
+                </div>
+            </div>
+        </div>
+
+        <!---carket banner--->
+        <section class="carketplus-banner">
+            <div class="carket-banner" style="height: 600px;">
+                <div class="review-slideshow">
+                    <div class="review-fade" style="width: 500px">
+                        <h1 style="font-size: 32px;">best decision ever.</h1>
+                        <br>
+                        <br>
+                        <div class="rev-rating">
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <br>
+                            <br>
+                            <br>
+                            <h2>as a first-time car owner, carket+ really takes the weight off your shoulders.</h2>
+                            <br>
+                            <h2>- helen w.</h2>
+                        </div>
+                    </div>
+                    <div class="review-fade" style="width: 500px">
+                        <h1 style="font-size: 32px;">so worth it.</h1>
+                        <br>
+                        <br>
+                        <div class="rev-rating">
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <br>
+                            <br>
+                            <br>
+                            <h2>inexpensive. high quality. full coverage. what more can i say?</h2>
+                            <br>
+                            <h2>- brandon t.</h2>
+                        </div>
+                    </div>
+                    <div class="review-fade" style="width: 500px">
+                        <h1 style="font-size: 32px;">lifesaver.</h1>
+                        <br>
+                        <br>
+                        <div class="rev-rating">
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <br>
+                            <br>
+                            <br>
+                            <h2>my family of 5 is still alive thanks to carket+. 5 star service.</h2>
+                            <br>
+                            <h2>- kieran b.</h2>
+                        </div>
+                    </div>
+                    <div class="review-fade" style="width: 500px">
+                        <h1 style="font-size: 32px;">amazing service.</h1>
+                        <br>
+                        <br>
+                        <div class="rev-rating">
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <i class="fas fa-star" style="font-size: 24px;"></i>
+                            <br>
+                            <br>
+                            <br>
+                            <h2>you can't pass on such a fantastic service. everything you could ever want done is done for you.</h2>
+                            <br>
+                            <h2>- hugh h.</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!---review slideshow javascript--->
+                <script>
+                    let index = 0;
+                    displayReviews();
+                    function displayReviews() {
+                        let i;
+                        const reviews = document.getElementsByClassName("review-fade");
+                        for (i = 0; i < reviews.length; i++) {
+                            reviews[i].style.display = "none";
+                        }
+                        index++;
+                        if (index > reviews.length) {
+                            index = 1;
+                        }
+                        reviews[index-1].style.display = "block";
+                        setTimeout(displayReviews, 2000); 
+                    }
+                </script>
+
+                <div class="carket-info" style="width: 800px;">
+                    <h1>carket+</h1>
+                    <h3>quality assurance & insurance made easy.</h3>
+                    <br>
+                    <a href="" class="carket-btn">learn more</a>
+                </div>
+            </div>
+        </section>
+
+        <!---show us your new ride--->
+        <section class="ride-container">
+            <h1 style="font-size: 36px;">#whipcheck</h1>
+            <h3>share your photos with us here or @carket on social media and tag us #carket for a chance to be featured!</h3>
+            <br>
+            <a href="" class="whip-btn">upload your new whip</a>
+            <br>
+            <div class="ride-slideshow">
+                <div class="ride-row">
+                    <div class="whip-fade">
+                        <img src="post1.jpg" style="width: 300px; height: 300px; object-fit: cover; object-position: 20% 0;">
+                    </div>
+                    <div class="whip-fade">
+                        <img src="post2.jpg" style="width: 300px; height: 300px; object-fit: cover;">
+                    </div>
+                    <div class="whip-fade">
+                        <img src="post3.jpg" style="width: 300px; height: 300px; object-fit: cover; object-position: 40% 0;">
+                    </div>
+                    <div class="whip-fade">
+                        <img src="post4.jpg" style="width: 300px; height: 300px; object-fit: cover; object-position: 10% 0;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!---footer--->
+        <section class="footer">
+            <div class="newsletter">
+                <h2>want to know more? subscribe to our newsletter <i class="fas fa-paper-plane"></i></h2>
+                <p>get all the latest model drops, limited-time offers, and collaboration events sent right into your inbox asap.</p>
+                <br>
+                <br>
+                <form action="subscribe">
+                    <input type="email" id="email" name="email" placeholder="e-mail" style="background-color: black; color: white; border: 2px solid white; padding: 12px 16px; font-size: 20px;">
+                    <input type="submit" value="sign me up ->" style="background-color: black; color: white; border: 2px solid white; padding: 12px 34px; font-size: 20px;">
+                </form>
+                <br>
+                <br>
+                <p style="font-size: 10px;">by subscribing to carket, you consent to receiving marketing messages via email. rates may apply. click <a href="" style="color: white; font-size: 10px;">unsubscribe</a> to opt out at any time.</p>
+            </div>
+            <div class="foot-row">
+                <div class="foot-col">
+                    <h3>contact us</h3>
+                    <p><i class="fal fa-envelope"></i> customerservice@carket.com</p>
+                    <p><i class="fal fa-phone"></i> 1-202-456-1111</p>
+                    <p><i class="fal fa-clock"></i> operating hours are from 9am to 6pm ET Monday to Saturday</p>
+                    <br>
+                    <h3>about us</h3>
+                    <p>A leading establishment in digital automotive dealership, Carket is the marketplace for all things cars. Carket is the trusted choice for cars through; professional service, guaranteed security, and high-quality cars. Carket has throughout the years helped thousands of customers purchase the perfect car tailored to their liking. Carket is proud to be a revolutionising figure in the car retailing sector, where anybody can travel from point A to point B. </p>
+                </div>
+                <div class="foot-col">
+                    <h3>follow carket </h3>
+                    <div class="social-media">
+                        <li><a href="" style="font-size: 24px; color: white; text-decoration: none; list-style-type: none;"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="" style="font-size: 24px; color: white; text-decoration: none;"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="" style="font-size: 24px; color: white; text-decoration: none;"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="" style="font-size: 24px; color: white; text-decoration: none;"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="" style="font-size: 24px; color: white; text-decoration: none;"><i class="fab fa-tiktok"></i></i></a></li>
+                    </div>
+                    <div class="ulinks-row">
+                        <div class="ulinks-column">
+                            <h3>help</h3>
+                            <li><a href="faq.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">faq</a></li>
+                            <li><a href="contacts.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">contact us</a></li>
+                            <li><a href="account.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">my account</a></li>
+                        </div>
+                        <div class="ulinks-column">
+                            <h3>cars</h3>
+                            <li><a href="collaborations.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">collaborations</a></li>
+                            <li><a href="cars.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">shop cars</a></li>
+                            <li><a href="about.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">about carket</a></li>
+                            <li><a href="careers.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">careers</a></li>
+                        </div>
+                        <div class="ulinks-column">
+                            <h3>legal</h3>
+                            <li><a href="returns.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">returns</a></li>
+                            <li><a href="returns.html" style="font-size: 14px; color: white; text-decoration: none; list-style-type: none;">policy</a></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rights">
+                <div class="rights">
+                    <h3>© 2023 carket holdings. all rights reserved.</h3>
+                </div>
+            </div>
+            <div class="bottom-right">
+                <div class="privacy">
+                    <li><a href="" style="font-size: 14px; color: rgb(255, 255, 255); text-decoration: none;">privacy policy</a></li>
+                </div>
+                <p style="font-size: 14px; color: rgb(255, 255, 255);">&nbsp;|&nbsp;</p>
+                <div class="terms">
+                    <li><a href="" style="font-size: 14px; color: white; text-decoration: none;">terms of use</a></li>
+                </div>
+                <p style="font-size: 14px; color: rgb(255, 255, 255);">&nbsp;|&nbsp;</p>
+                <div class="accessibility">
+                    <li><a href="" style="font-size: 14px; color: white; text-decoration: none;">accessibility</a></li>
+                </div>
+            </div>
+        </section>
+
+        <!---javascript for sidebar menu toggle--->
+        <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }  
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+        </script>
+
+        <!---javascript for slideshow toggle--->
+        <script>
+            
+        </script>
+
+        
+    </body>
+</html>
