@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>all cars || carket - the market for cars</title>
+        <link rel="stylesheet" href="teststyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <link href="font-awesome-pro-5\font-awesome-pro-5\css\all.css" rel="stylesheet">
+        <script defer src="font-awesome-pro-5\font-awesome-pro-5\js\pro.js"></script>
+  </head>
+  <body>
+    <section class="cars-inventory">
+    <div class="wrapper">
+      <div id="search-container">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="type something here..."
+        />
+        <button id="search"><i class="far fa-search"></i> search</button>
+      </div>
+      <div id="buttons">
+        <button class="button-value" onclick="filterProduct('all')">all</button>
+        <button class="button-value" onclick="filterProduct('sedan')">
+          sedan
+        </button>
+        <button class="button-value" onclick="filterProduct('coupe')">
+          coupe
+        </button>
+        <button class="button-value" onclick="filterProduct('hatchback')">
+          hatchback
+        </button>
+        <button class="button-value" onclick="filterProduct('suv')">
+            suv
+        </button>
+        <button class="button-value" onclick="filterProduct('pickup')">
+            pickup
+        </button>
+        <button class="button-value" onclick="filterProduct('family')">
+            family
+        </button>
+      </div>
+      <div id="products"></div>
+    </div>
+
+
+
+
+    <!---filter/search javascript--->
+    <script>
+        let products = {
+            data: [
+                {
+                productName: "audi a3 sportback",
+                category: "hatchback",
+                price: "36,100",
+                image: "Audi A3 Sportback.jpg",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "audi a6 avant",
+                category: "family",
+                price: "56,900",
+                image: "Audi A6 Avant.jpg",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "audi a5 coupe",
+                category: "coupe",
+                price: "44,200",
+                image: "Audi A5 Coupe.jpeg",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "audi q7",
+                category: "suv",
+                price: "59,200",
+                image: "Audi Q7 .jpeg",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "audi q4 e-tron",
+                category: "suv",
+                price: "51,400",
+                image: "Audi Q4 E Tron.jpeg",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "audi q8 e-tron",
+                category: "suv",
+                price: "75,100",
+                image: "Q8 etron.jpg",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "bmw i5",
+                category: "sedan",
+                price: "68,900",
+                image: "BMW i5.jpg",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "bmw x7",
+                category: "suv",
+                price: "70,200",
+                image: "BMW x7.jpeg",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "bmw 5 series",
+                category: "sedan",
+                price: "60,900",
+                image: "5 Series sedan.png",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "bmw 7 series",
+                category: "sedan",
+                price: "96,400",
+                image: "7 series.jpg",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "bmw 2 series gran tourer",
+                category: "family",
+                price: "35,900",
+                image: "2 series gran tourer.png",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "bmw 2 series coupe",
+                category: "coupe",
+                price: "40,500",
+                image: "Bmw 2 series coupe .jpeg",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "citroen ami",
+                category: "hatchback",
+                price: "6,000",
+                image: "Citroen AMI.jpeg",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "citroen c3",
+                category: "suv",
+                price: "24,640",
+                image: "Citroen c3.jpeg",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "citroen c4",
+                category: "suv",
+                price: "39,990",
+                image: "Citroen C4.jpeg",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "fiat 500",
+                category: "hatchback",
+                price: "13,000",
+                image: "Fiat 500.png",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "fiat 500 electric",
+                category: "coupe",
+                price: "20,400",
+                image: "Fiat 500 electric.jpeg",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+                {
+                productName: "fiat panda",
+                category: "family",
+                price: "21,900",
+                image: "Fiat Panda.png",
+                stock: "in stock",
+                heart: "save",
+                stars: "reviews",
+                book: "book now",
+                learn: "learn more",
+                },
+            ],
+        };
+        
+        for (let i of products.data) {
+        //create Card
+        let card = document.createElement("div");
+
+        //card should have category and should stay hidden initially
+        card.classList.add("card", i.category, "hide");
+
+        //heart + stock div
+        let topContainer = document.createElement("div");
+        topContainer.classList.add("top-container");
+
+        //heart
+        let heart = document.createElement("p");
+        heart.classList.add("heart");
+        heart.innerText = i.heart.toLowerCase();
+        heart.innerHTML = '<i class="fas fa-heart" id="heart" style="font-size: 32px; float: right;"></i>';
+        topContainer.appendChild(heart);
+        card.appendChild(topContainer);
+
+        //stock
+        let stock = document.createElement("p");
+        stock.classList.add("stock");
+        stock.innerText = i.stock.toLowerCase();
+        stock.innerHTML = '<i class="fas fa-circle" style="color: #4ce300;"></i> in stock';
+        topContainer.appendChild(stock);
+        card.appendChild(topContainer);
+
+        //image div
+        let imgContainer = document.createElement("div");
+        imgContainer.classList.add("image-container");
+
+        //img tag
+        let image = document.createElement("img");
+        image.setAttribute("src", i.image);
+        imgContainer.appendChild(image);
+        card.appendChild(imgContainer);
+
+
+        //container
+        let container = document.createElement("div");
+        container.classList.add("container");
+
+        //product name
+        let name = document.createElement("h4");
+        name.classList.add("product-name");
+        name.innerText = i.productName.toLowerCase();
+        container.appendChild(name);
+
+
+        //tags
+        let tags = document.createElement("div");
+        tags.classList.add("tags");
+
+
+        //rating
+        let rating = document.createElement("div");
+        rating.classList.add("rating");
+        container.appendChild(rating);
+
+        //stars
+        let stars = document.createElement("p");
+        stars.innerText = i.stars;
+        stars.innerHTML = '<i class="fas fa-star" style="padding-top: 5px"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fad fa-star-half"></i> <a href="test.html" style="color: black;">11 reviews</a>';
+        rating.appendChild(stars);
+
+
+        //price
+        let price = document.createElement("p");
+        price.innerText = "$" + i.price;
+        container.appendChild(price);
+
+
+        //action buttons
+        let actions = document.createElement("div");
+        actions.classList.add("actions");
+        container.appendChild(actions);
+
+        //book now
+        let book = document.createElement("p");
+        book.innerText = i.book;
+        book.innerHTML = '<br><a href="test.html" class="book">book now</a>';
+        actions.appendChild(book);
+
+        card.appendChild(container);
+        document.getElementById("products").appendChild(card);
+        }
+        //parameter passed from button (Parameter same as category)
+        function filterProduct(value) {
+        //button class code
+        let buttons = document.querySelectorAll(".button-value");
+        buttons.forEach((button) => {
+            //check if value equals innerText
+            if (value.toLowerCase() == button.innerText.toLowerCase()) {
+            button.classList.add("active");
+            } else {
+            button.classList.remove("active");
+            }
+        });
+        //select all cards
+        let elements = document.querySelectorAll(".card");
+        //loop through all cards
+        elements.forEach((element) => {
+            //display all cards on 'all' button click
+            if (value == "all") {
+            element.classList.remove("hide");
+            } else {
+            //Check if element contains category class
+            if (element.classList.contains(value)) {
+                //display element based on category
+                element.classList.remove("hide");
+            } else {
+                //hide other elements
+                element.classList.add("hide");
+            }
+            }
+        });
+        }
+        //search button click
+        document.getElementById("search").addEventListener("click", () => {
+        //initializations
+        let searchInput = document.getElementById("search-input").value;
+        let elements = document.querySelectorAll(".product-name");
+        let cards = document.querySelectorAll(".card");
+        //loop through all elements
+        elements.forEach((element, index) => {
+            //check if text includes the search value
+            if (element.innerText.includes(searchInput.toLowerCase())) {
+            //display matching card
+            cards[index].classList.remove("hide");
+            } else {
+            //hide others
+            cards[index].classList.add("hide");
+            }
+        });
+        });
+        //Initially display all products
+        window.onload = () => {
+        filterProduct("all");
+        };
+
+        //heart icon colour changer
+        (function() {
+            const heart = document.getElementById('heart');
+            heart.addEventListener('click', function() {
+                heart.classList.toggle('black');
+            });
+        })();
+        </script>
+    </section>
+  </body>
+</html>
